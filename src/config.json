@@ -1,0 +1,8 @@
+{
+    "sender_account": "",
+    "steem_node": "https://rpc.buildteam.io",
+    "private_active_key": "",
+    "receiver_account": ["receiver_account1", "receiver_account2", "receiver_account3"],
+    "amount": "0.001 SBD",
+    "memo": "This is testing..."
+}

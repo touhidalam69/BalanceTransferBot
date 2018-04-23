@@ -8,15 +8,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "''"
+    "url": "https://github.com/touhidalam69/BalanceTransferBot"
   },
   "keywords": [
     "steem",
     "balance",
-    "sbd"
+    "sbd",
+    "Transfer",
+    "steemit",
+    "steem-js"
   ],
   "author": "touhid alam",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "steem": "^0.7.1"
   }
