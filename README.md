@@ -43,4 +43,4 @@ This is a Steem Balance Transfer application, which allow you to transfer balanc
 ### Transaction Log
 #### 1. Application will generate Transaction Log for every single transaction which you can find on transactionLog.JSON file.
 
-#### 1. Application will generate Error Transaction Log which you can find on transactionErrorLog.JSON file.
+#### 2. Application will generate Error Transaction Log which you can find on transactionErrorLog.JSON file.
