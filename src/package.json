@@ -1,0 +1,23 @@
+{
+  "name": "balancetransfer",
+  "version": "1.0.0",
+  "description": "This is a steem balance transfer bot",
+  "main": "app.js",
+  "scripts": {
+    "test": "console.log('hello...')"
+  },
+  "repository": {
+    "type": "git",
+    "url": "''"
+  },
+  "keywords": [
+    "steem",
+    "balance",
+    "sbd"
+  ],
+  "author": "touhid alam",
+  "license": "ISC",
+  "dependencies": {
+    "steem": "^0.7.1"
+  }
+}
