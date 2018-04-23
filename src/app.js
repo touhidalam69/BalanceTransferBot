@@ -14,8 +14,8 @@ if (fs.existsSync('transactionLog.json')) {
         pretransactionlist = transactionlist;
     }
 }
-if (fs.existsSync('ErrorLog.json')) {
-    const Errorlist = JSON.parse(fs.readFileSync("ErrorLog.json"));
+if (fs.existsSync('transactionErrorLog.json')) {
+    const Errorlist = JSON.parse(fs.readFileSync("transactionErrorLog.json"));
 
     if (Errorlist.length) {
         preaErrorlist = Errorlist;
@@ -25,7 +25,9 @@ if (fs.existsSync('ErrorLog.json')) {
 SendAmount();
 
 function SendAmount() {
-    config.receiver_account.forEach(function (receiver) {
+    var receiverList = config.receiver_account;
+
+    receiverList.forEach(function (receiver) {
         console.log("Sending amount " + config.amount + ' to ' + receiver + ' With memo ' + config.memo);
         steem.broadcast.transfer(config.private_active_key, config.sender_account, receiver, config.amount, config.memo, function (err, result) {
             if (err || !result) {
@@ -50,6 +52,7 @@ function saveTransactionLog(id, block_num, expiration, ref_block_num, sender, re
         receiver: receiver,
         amount: amount,
         memo: memo,
+        transactionTime: CurrentDate()
     };
     pretransactionlist.push(atransaction);
 
@@ -68,13 +71,18 @@ function saveErrorLog(code, message, sender, receiver, amount, memo) {
         receiver: receiver,
         amount: amount,
         memo: memo,
+        transactionTime: CurrentDate()
     };
 
     preaErrorlist.push(aError);
 
-    fs.writeFile('ErrorLog.json', JSON.stringify(preaErrorlist), function (err) {
+    fs.writeFile('transactionErrorLog.json', JSON.stringify(preaErrorlist), function (err) {
         if (err) {
             console.log(err);
         }
     });
+}
+function CurrentDate() {
+    var date = new Date()
+    return date.toString();
 }
